@@ -1,0 +1,248 @@
+﻿#--------------------------------------------------------------------
+#範例8-9-1：型態3：顯示總和sum/平均mean的樞紐分析表，交叉分析圖【3變數x,y,z： z=f(x,y)】
+#【課本14-26頁】
+#https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.unstack.html
+
+#（1）初級商業數據四大分析型態：
+# 型態1：計算某變數的出現次數value_counts【1變數x： size=count(x)】
+# 型態2：顯示次數size的樞紐分析表，交叉分析圖【2變數x,y： size=count(x,y)】
+# 型態3：顯示總和sum/平均mean的樞紐分析表，交叉分析圖【3變數x,y,z： z=f(x,y)】
+# 型態4：顯示總和sum/平均mean的多組對應分析表/圖【3變數x,y1,y2： y1=f1(x), y2=f2(x)，y1y2不同群組不同刻度】
+
+#（2）型態1：【1變數x： size=count(x)】
+#指令：dfnew = df.groupby('入學年份').value_counts()
+#關聯：次數size= count('入學年份x')
+#☎關鍵特色：x是群組，size是目標值 ==> 這個就是單變數的出現次數分析
+#☎說明特色：x是群組（入學年份），szie是目標值
+#☎對應指令：df.groupby('入學年份').value_counts()
+#☎對應指令：df.groupby('群組').value_counts()
+
+#（3）型態2：【2變數x,y： size=count(x,y】
+#指令：dfnew = df.groupby(['業務單位','銷售產品']).size().unstack(level='銷售產品')
+#關聯：size = f(x業務單位, y銷售產品)
+#☎關鍵特色：xy都是群組，szie是目標值 ==> 這個就是樞紐分析表
+#☎說明特色：xy都是群組（業務單位,銷售產品），size是目標值（銷售金額） ==> 這個就是樞紐分析表
+#☎對應指令：df.groupby(['業務單位','銷售產品']).size()
+#☎對應指令：df.groupby(['群組','群組']).size()目標值
+
+#（4）型態3：【3變數x,y,z： z=f(x,y)】
+#指令：dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品')
+#關聯：z銷售金額 = f(x業務單位, y銷售產品)
+#☎關鍵特色：xy都是群組，z是目標值 ==> 這個就是樞紐分析表
+#☎說明特色：xy都是群組（業務單位,銷售產品），z是目標值（銷售金額） ==> 這個就是樞紐分析表
+#☎對應指令：df.groupby(['業務單位','銷售產品'])['銷售金額'].sum()
+#☎對應指令：df.groupby(['群組','群組'])['目標值'].sum()
+
+#（5）型態4：【3變數x,y1,y2： y1=f1(x), y2=f2(x)，y1y2不同群組不同刻度】
+#指令：dfnew = df.groupby('業務單位')[['銷售數量','銷售金額']].sum()
+#關聯：y1銷售數量 = f1(x業務單位)，y2銷售金額 = f2(x業務單位)，
+#☎關鍵特色：x是群組，y1,y2是目標值 ==> 這個就是對應分析表
+#☎說明特色：x是群組（業務單位），zy1,y2是目標值（銷售數量，銷售金額） ==> 這個就是對應分析表
+#☎對應指令：df.groupby('業務單位')[['銷售數量','銷售金額']].sum()
+#☎對應指令：df.groupby('群組')[['目標值','目標值']].sum()
+
+#--------------------------------------
+#1.練習1：讀取業務銷售分析資料庫
+#import pandas as pd
+#df = pd.read_excel("https://acupun.site/lecture/pandas/example/resource/sales.csv","sales")
+#--------------------------------------
+import pandas as pd
+df = pd.read_csv("https://acupun.site/lecture/pandas/example/resource/sales.csv")
+print()
+print("1-1.顯示df前5筆 =\n", df.head())
+
+#--------------------------------------
+#2.練習2：：顯示總和sum的樞紐分析表：建立2個軸【業務單位，銷售產品】，查詢【銷售金額】總和
+#（1）表格：計算總和sum的樞紐分析表：
+#表格變數：樞紐分析表的參數有3個：列索引index，欄位column，表格內顯示出現總和sum
+#參數1：列索引index =>  groupby(['業務單位'])
+#參數2：欄位column =>  groupby(['銷售產品']).size().unstack(level='銷售產品')
+#參數3：表格內顯示出現總和sum =>  df['銷售金額'].sum()
+
+#（2）三者有先後關聯：分群 => 樞紐分析表=> 交叉分析圖
+#分群：    dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum()
+#樞紐分析表： dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品')
+#交叉分析圖：    df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品').plot(kind='bar')
+
+#（3）【3變數x,y,z： z=f(x,y)】
+#指令：dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品')
+#關聯：z銷售金額 = f(x業務單位, y銷售產品)
+#☎關鍵特色：xy都是群組，z是目標值 ==> 這個就是樞紐分析表
+#☎說明特色：xy都是群組（業務單位,銷售產品），z是目標值（銷售金額） ==> 這個就是樞紐分析表
+#☎對應指令：df.groupby(['業務單位','銷售產品'])['銷售金額'].sum()
+#☎對應指令：df.groupby(['群組','群組'])['目標值'].sum()
+#--------------------------------------
+print()
+print('2-1.先分群：然後計算總和sum：建立2個軸：建立2個軸【業務單位，銷售產品】，查詢【銷售金額】總和 =\n')
+dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum()
+print(dfnew)
+
+print()
+print('2-2.用unstack轉成樞紐分析表：銷售產品放在欄位 =\n')
+dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品')
+print(dfnew)
+
+print()
+print('2-3.將樞紐分析表畫成交叉分析圖：柱狀圖 =\n')
+#--------------------------------
+# colab繪圖顯示繁體中文
+#--------------------------------
+import matplotlib
+# 先下載台北黑體字型
+!wget -O taipei_sans_tc_beta.ttf https://drive.google.com/uc?id=1eGAsTN1HBpJAkeVM57_C7ccp7hbgSz3_&export=download import matplotlib
+# 新增字體
+matplotlib.font_manager.fontManager.addfont('taipei_sans_tc_beta.ttf')
+# 將 font-family 設為 Taipei Sans TC Beta
+# 設定完後，之後的圖表都可以顯示中文了
+matplotlib.rc('font', family='Taipei Sans TC Beta')
+
+import matplotlib.pyplot as plt
+df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品').plot(kind='bar')
+plt.show()
+print(dfnew)
+
+#--------------------------------------
+#3.練習3：：將樞紐分析表畫成交叉分析圖 ==> 堆疊柱狀圖 ==> 看哪個單位總業績最好
+#（1）指令：df.plot(kind='bar',stacked=True)
+# df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品').plot(kind='bar',stacked=True)
+#--------------------------------------
+print()
+print('3-1.將樞紐分析表畫成交叉分析圖 ==> 堆疊柱狀圖 ==> 看哪個單位業績最好=\n')
+df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品').plot(kind='bar',stacked=True)
+plt.show()
+#--------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#--------------------------------------------------------------------
+#範例8-9-1：型態3：顯示總和sum/平均mean的樞紐分析表，交叉分析圖【3變數x,y,z： z=f(x,y)】
+#【課本14-26頁】
+#https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.unstack.html
+
+#（1）初級商業數據四大分析型態：
+# 型態1：計算某變數的出現次數value_counts【1變數x： size=count(x)】
+# 型態2：顯示次數size的樞紐分析表，交叉分析圖【2變數x,y： size=count(x,y)】
+# 型態3：顯示總和sum/平均mean的樞紐分析表，交叉分析圖【3變數x,y,z： z=f(x,y)】
+# 型態4：顯示總和sum/平均mean的多組對應分析表/圖【3變數x,y1,y2： y1=f1(x), y2=f2(x)，y1y2不同群組不同刻度】
+
+#（2）型態1：【1變數x： size=count(x)】
+#指令：dfnew = df.groupby('入學年份').value_counts()
+#關聯：次數size= count('入學年份x')
+#☎關鍵特色：x是群組，size是目標值 ==> 這個就是單變數的出現次數分析
+#☎說明特色：x是群組（入學年份），szie是目標值
+#☎對應指令：df.groupby('入學年份').value_counts()
+#☎對應指令：df.groupby('群組').value_counts()
+
+#（3）型態2：【2變數x,y： size=count(x,y】
+#指令：dfnew = df.groupby(['業務單位','銷售產品']).size().unstack(level='銷售產品')
+#關聯：size = f(x業務單位, y銷售產品)
+#☎關鍵特色：xy都是群組，szie是目標值 ==> 這個就是樞紐分析表
+#☎說明特色：xy都是群組（業務單位,銷售產品），size是目標值（銷售金額） ==> 這個就是樞紐分析表
+#☎對應指令：df.groupby(['業務單位','銷售產品']).size()
+#☎對應指令：df.groupby(['群組','群組']).size()目標值
+
+#（4）型態3：【3變數x,y,z： z=f(x,y)】
+#指令：dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品')
+#關聯：z銷售金額 = f(x業務單位, y銷售產品)
+#☎關鍵特色：xy都是群組，z是目標值 ==> 這個就是樞紐分析表
+#☎說明特色：xy都是群組（業務單位,銷售產品），z是目標值（銷售金額） ==> 這個就是樞紐分析表
+#☎對應指令：df.groupby(['業務單位','銷售產品'])['銷售金額'].sum()
+#☎對應指令：df.groupby(['群組','群組'])['目標值'].sum()
+
+#（5）型態4：【3變數x,y1,y2： y1=f1(x), y2=f2(x)，y1y2不同群組不同刻度】
+#指令：dfnew = df.groupby('業務單位')[['銷售數量','銷售金額']].sum()
+#關聯：y1銷售數量 = f1(x業務單位)，y2銷售金額 = f2(x業務單位)，
+#☎關鍵特色：x是群組，y1,y2是目標值 ==> 這個就是對應分析表
+#☎說明特色：x是群組（業務單位），zy1,y2是目標值（銷售數量，銷售金額） ==> 這個就是對應分析表
+#☎對應指令：df.groupby('業務單位')[['銷售數量','銷售金額']].sum()
+#☎對應指令：df.groupby('群組')[['目標值','目標值']].sum()
+
+#--------------------------------------
+#1.練習1：讀取業務銷售分析資料庫
+#import pandas as pd
+#df = pd.read_excel("https://acupun.site/lecture/pandas/example/resource/sales.csv","sales")
+#--------------------------------------
+import pandas as pd
+df = pd.read_csv("https://acupun.site/lecture/pandas/example/resource/sales.csv")
+print()
+print("1-1.顯示df前5筆 =\n", df.head())
+
+#--------------------------------------
+#2.練習2：：計算總和sum的樞紐分析表：建立2個軸【業務單位，銷售產品】，查詢【銷售金額】總和
+#（1）表格：計算總和sum的樞紐分析表：
+#表格變數：樞紐分析表的參數有3個：列索引index，欄位column，表格內顯示出現總和sum
+#參數1：列索引index =>  groupby(['業務單位'])
+#參數2：欄位column =>  groupby(['銷售產品']).size().unstack(level='銷售產品')
+#參數3：表格內顯示出現總和sum =>  df['銷售金額'].sum()
+
+#（2）三者有先後關聯：分群 => 樞紐分析表=> 交叉分析圖
+#分群：    dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum()
+#樞紐分析表： dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品')
+#交叉分析圖：    df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品').plot(kind='bar')
+
+#（3）【3變數x,y,z： z=f(x,y)】
+#指令：dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品')
+#關聯：z銷售金額 = f(x業務單位, y銷售產品)
+#☎關鍵特色：xy都是群組，z是目標值 ==> 這個就是樞紐分析表
+#☎說明特色：xy都是群組（業務單位,銷售產品），z是目標值（銷售金額） ==> 這個就是樞紐分析表
+#☎對應指令：df.groupby(['業務單位','銷售產品'])['銷售金額'].sum()
+#☎對應指令：df.groupby(['群組','群組'])['目標值'].sum()
+#--------------------------------------
+print()
+print('2-1.先分群：然後計算總和sum：建立2個軸：建立2個軸【業務單位，銷售產品】，查詢【銷售金額】總和 =\n')
+dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum()
+print(dfnew)
+
+print()
+print('2-2.用unstack轉成樞紐分析表：銷售產品放在欄位 =\n')
+dfnew = df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品')
+print(dfnew)
+
+print()
+print('2-3.將樞紐分析表畫成交叉分析圖：柱狀圖 =\n')
+#--------------------------------
+# colab繪圖顯示繁體中文
+#--------------------------------
+import matplotlib
+# 先下載台北黑體字型
+!wget -O taipei_sans_tc_beta.ttf https://drive.google.com/uc?id=1eGAsTN1HBpJAkeVM57_C7ccp7hbgSz3_&export=download import matplotlib
+# 新增字體
+matplotlib.font_manager.fontManager.addfont('taipei_sans_tc_beta.ttf')
+# 將 font-family 設為 Taipei Sans TC Beta
+# 設定完後，之後的圖表都可以顯示中文了
+matplotlib.rc('font', family='Taipei Sans TC Beta')
+
+import matplotlib.pyplot as plt
+df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品').plot(kind='bar')
+plt.show()
+print(dfnew)
+
+#--------------------------------------
+#3.練習3：：將樞紐分析表畫成交叉分析圖 ==> 堆疊柱狀圖 ==> 看哪個單位總業績最好
+#（1）指令：df.plot(kind='bar',stacked=True)
+# df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品').plot(kind='bar',stacked=True)
+#--------------------------------------
+print()
+print('3-1.將樞紐分析表畫成交叉分析圖 ==> 堆疊柱狀圖 ==> 看哪個單位業績最好=\n')
+df.groupby(['業務單位','銷售產品'])['銷售金額'].sum().unstack(level='銷售產品').plot(kind='bar',stacked=True)
+plt.show()
+#--------------------------------------------------------------------
+
+
