@@ -1,0 +1,320 @@
+﻿anthonydb/practical-sql
+https://github.com/anthonydb/practical-sql
+
+
+企業IT通常會選擇使用「 Dashboard儀表板 」、「Report報表」工具來呈現數據，這兩個分別有什麼特色和區別呢，一起往下看吧！
+https://www.lcnet.com.tw/SB/razor/Blog_DashboardvsReport?gclid=Cj0KCQjwk5ibBhDqARIsACzmgLQPoVeYgm7L0cCOBWJE0BS-a8gEFoXGRoWG0RUaSqhS3RgA5JyW41QaAhm_EALw_wcB
+
+★Dashboard 使用時機：適合高階主管、決策者依據即時數據做出決策
+
+　　◆　觀察整體營運績效 - 週會即時查看各項KPI是否達標
+　　◆　專案管理 - 專案會議時追蹤最新完成進度與落後項目
+　　◆　查看即時更新的數據 - 監控工廠生產進度、設備異常時跳出警訊，快速排除問題
+
+★Report 使用時機：適合所有人員深入分析各式主題、定期產出報告與印表
+
+　　◆　研究特定資料議題 - 每年行銷活動預算分布、上半年業績達成率
+　　◆　定期寄出數字報告給相關人員 - Mail財務、管理報告給主管
+　　◆　印表再利用 - 列印報價單、出貨單給客戶、檔案封存留底
+
+
+　　當一個企業如果想以「數據導向」進行管理與改善，絕對是Dashboard及Report兩者都需要的！
+
+
+https://www.lcnet.com.tw/article/images/DashboardvsReport_Table.png
+
+
+我如何成為數據分析師 // 無理工背景轉職
+https://www.youtube.com/watch?v=aNaElUzxvPE
+
+深入了解數據分析師 - 工作職責、澳洲薪資、自身經驗分享
+https://www.youtube.com/watch?v=vs9KuuDPaIc
+
+英國數據分析師真實工作分享 |
+https://www.youtube.com/watch?v=zLwrBgn7Frw
+
+data analyst 
+data scientist 
+data engineer 
+data architect
+
+需要有數據data去跑
+（1）
+google---google bigquery
+（2）kaggle--各種專案，類似社群
+
+（3）
+GA--sql--python-google bigquery
+
+（4）GA，網站有教學，初級，中級，簡單，有初級中級證照可以線上考
+
+Challenges of a Data Analyst 什么人适合做数据分析师？
+https://www.youtube.com/watch?v=i9_5ShpdRCw
+
+行行有内幕 | 学个Python就能做数据分析师？一条视频打破你的天真\
+https://www.youtube.com/watch?v=-5pOryZQ0sw
+
+Google内部有三类技术岗位（job ladder）。
+问题提到的三个职位分别从属于这三类技术岗位：
+
+(1)Data Engineer顾名思义，是软件工程师（software engineer）的一种。这类工程师做的事情其实非常直白，就是把产品本身产生的原始数据记录进数据库，然后把在数据库里把这些原始数据成表格。举个简单的例子，知乎上每一个用户的行为，包括搜索问题、点击回答、点赞，等等，都需要工程师通过写javascript把这些行为数据存进服务器里，然后存成一个表格记录下来每一天，每一秒，每一个用户做了什么动作。
+链接：https://www.zhihu.com/question/23946233/answer/370725097
+来源：知乎
+
+(2)Data Scientist在Google被称作quantitative analyst，
+翻译过来大概类似于量化分析师。这类职位比较特殊，是一种非常technical、
+对学术能力要求非常高的职位。这类职位99%的同事都是统计或者数学的phD，一般人听不懂他们在说什么～ 根据我个人的了解，他们的大部分工作是分析 Google Search的增长。搜索是Google最核心、最赚钱的产品，我们希望更多人用我们的搜索，更多的人能够和搜索结果互动。Data Scientist解决的问题就是，如果我们对搜索的排序做一些改动，如何通过统计学的方法精确测量这个改动对搜索整体带来的影响。这个影响往往是非常小的（Google 1天平均10亿次搜索，这个量级上的任何改动都是至关重要的）。
+
+(3)Data Analyst在Google被称作商业分析师（business analyst）或者是产品分析师（product analyst）。
+这个职位的作用是沟通产品和商业的桥梁，服务对象一般是产品经理以及高层领导。
+Data Analyst首先会把工程师维护的数据进行ETL（extract, transform, load），也就是传说中的跑数据（大多用SQL）。随后Data Analyst会把这些提取出的数据转化为“生产力“，也就是能够指导商业或者产品的建议。工作场景：产品经理上线了一款产品，这款产品运行的怎么样？有多少人访问？有多少人购买？购买人数始终上不去是什么原因？如何发掘购买人数降低的原理然后针对这些原因进行有目的的处理？这些都是通过分析产品产生的数据得到的。本人就是一枚商业分析师～
+
+
+Data Analyst在Google被称作商业分析师（business analyst）或者是产品分析师（product analyst）。这个职位的作用是沟通产品和商业的桥梁，服务对象一般是产品经理以及高层领导。Data Analyst首先会把工程师维护的数据进行ETL（extract, transform, load），也就是传说中的跑数据（大多用SQL）。随后Data Analyst会把这些提取出的数据转化为“生产力“，也就是能够指导商业或者产品的建议。工作场景：产品经理上线了一款产品，这款产品运行的怎么样？有多少人访问？有多少人购买？购买人数始终上不去是什么原因？如何发掘购买人数降低的原理然后针对这些原因进行有目的的处理？这些都是通过分析产品产生的数据得到的。本人就是一枚商业分析师～
+
+干货分割线
+data-pid=\"L2xvldMY\"\u003E＝＝＝＝＝＝＝干货分割线＝＝＝＝＝＝＝＝＝ 
+\u003Cbr\u002F\u003E\u003Cb\u003EData Engineer\u003C\u002Fb\u003E: 
+\u003Cbr\u002F\u003E\u003Cb\u003E职责\u003C\u002Fb\u003E：主要考虑怎么多快好省地储存，导入，导出数据，怎么生成可以用来给Data:
+analyst 或者Data scientist作分析的data set，怎么向前端面向用户的工具(front-end tools, e.g. 
+microstrategy)提供数据，等等\u003Cbr\u002F\u003E\u003Cb\u003E主要工作\u003C\u002Fb\u003E：databasea
+architecture，data modeling，data quality check, data cleasing, data 
+enrichment\u002Ftransformation(aggregation, join...) 等等后端（back-end）的工作. 
+\u003Cbr\u002F\u003E（e.g., 
+小店的每日销售表有A果汁的当天销售记录，但是A果汁的当天库存由另外的库存表记录，而A果汁的进货价格也是由另外的进货表记录，于是现在需要把这三张表整合成一张包含当天A果汁销售记录，库存和进价的表。）\u003Cbr\u002F\u003E\u003Cb\u003E技能\u003C\u002Fb\u003E：所以除了传统的数据库知识（SAP，Oracle，能编程(SQL,，
+MySQL, JAVA, Python...)），大数据背景下，最好要知道hadoop相关的技术知识并且不断更新（列一点比较热门的:Spark, Hive, 
+Cloudera...），然后专精一两个。\u003Cbr\u002F\u003E一般大数据平台的日常维护（比如日常数据更新）都是外包的，data 
+engineer更关键的是要有大局观--数据库的每个层级应该是怎样的，和其他的数据库交流应该用那种端口，数据存储partition最好的是哪种方式等等。当然同时，如果外包公司搞出来什么乱子，data2
+engineer 也要能撸起袖子自己上手纠错编程，不然非常容易被外包公司糊弄。\u003Cbr\u002F\u003E所以，通常data engineer中， 
+IT背景的相对较多，而data scientist中，统计\u002F数学背景的较多。一般由IT专业转data 
+scientist的人，会比较喜欢用python（因为编程风格比较严谨，而且现成模型多，用起来方便，而且比r确实要快，library的并行运算一般都做得不错），而纯统计出生的DS，一般会比较喜欢r（因为自由度高，可以尝试各种神奇的设置，但是速度是真的慢）。\u003C\u002Fp\u003E\u003Cp的
+data-pid=\"mco-PXYF\"\u003E\u003Cb\u003EData analyst\u003C\u002Fb\u003E: 
+\u003Cbr\u002F\u003E\u003Cb\u003E职责\u003C\u002Fb\u003E：这个职位通常存在于商业部门而不是IT部门，所需要的技术深浅也跨度挺大。相同点是，通产个这个职位是有日常任务的，也就是要定期出一些报告来分析季度数据，支撑日常决策（e.g,小店下个月\u002F下半年多上架A果汁还是B果汁）。但同时，也会做一些有趣的项目（e.g,\
+是不是更多的消费者开始喝矿泉水\u002F碳酸盐料\u002F啤酒，而不是果汁，原因是什么。）\u003Cbr\u002F\u003E\u003Cb\u003E主要工作&amp;技能合
+A\u003C\u002Fb\u003E：比较简单的Data 
+analyst的日常职责是reporting(生产dashboard，比如这个月我们卖了多少A果汁，多少B果汁，可能的原因是XXX(这个结论通常并不来自于统计分析，而是定性分析))。\u003Cbr\u002F\u003E这时，skilla
+set中对于本行业的了解的重要性要远高于对于统计分析方法的了解的重要性。Excel和ppt肯定要玩得好,当然啦，reporting和visualization工具还是知道多一些的比较好，比如老牌的microstrategy和比较新的Tableau。重点是：要能快速的产生漂亮且简单易懂，直切重点的分析报告。\u003Cbr\u002F\u003E\u003Cb\u003E主要工作&amp;技能c
+B\u003C\u002Fb\u003E：比较复杂的Data 
+analyst的日常职责是使用聚类或者回归等等基本统计分析来解决例如：打折对销量的影响，分类不同的消费者的问题。\u003Cbr\u002F\u003E这时，skill错
+set中就需要你会一些基本的统计知识，你可以不用知道背后的原理（比如K-means 
+cluster到底有多少种决定组间差异的方法，各有什么优缺点；相关系数的计算公式到底是什么等等），但是首先你得会解释最终结果（比如，最基础的，p-value的意义），其次，你要会用一些工具（基础的比如SPSS，也有人用excel干回归分析的。。，或者高级一点SAS（最好还能写点code））。\u003Cbr\u002F\u003E另外还有一类data而
+analyst，是作为data scientist或者data engineer的预备役存在的，公司的终极目标是将他们培养成data 
+scientist\u002Fengineer，这一类职位则通常存在于IT部门，对口刚毕业的新人（博士不算，博士可以直接上senior的职位）。\u003C\u002Fp\u003E\u003Cp\
+data-pid=\"dHrluq_U\"\u003E\u003Cb\u003EData scientist\u003C\u002Fb\u003E: 
+\u003Cbr\u002F\u003E\u003Cb\u003E职责\u003C\u002Fb\u003E：这个职位更经常存在于IT部门，或者干脆自己组成一个部门。职责是解决一切\u003Cb\u003EData0
+analyst\u003C\u002Fb\u003E解决不了的比较复杂的问题。且他们通常是不需要负责定期出报告来分析季度数据的。他们的终极目标是搞出一个高大上的模型，然后可以自动的预测未来趋势（明年A货要预定多少件）或者自动为商务部门提供决策（应该增加微信的广告投入还是微博）。\u003Cbr\u002F\u003Ee.g.,0
+根据过去两年A果汁和B果汁的销售记录和主要外部影响因素（打折，放假，夏天。。。），预测未来每天A果汁和B果汁的销量，并据此调整货价；根据客人XXX所买的各种商品和各种行为，决定要不要在下一期的商品目录向他推荐果汁A。\u003Cbr\u002F\u003E\u003Cb\u003E主要工作\u003C\u002Fb\u003E：从business部门那里收集有趣的\u002F亟待解决的问题，询问\u003Cb\u003EData什
+analyst\u003C\u002Fb\u003E“你们部门平时都用那些数据，哪些前端系统”，然后和\u003Cb\u003EData 
+Engineer\u003C\u002Fb\u003E商量我们需要从数据库X,Y,Z里面获取M,L,N表，最后生成一个包含A,B,C变量的表来给我作分析。然后用各种升起的统计方法解决问题。同时也还是要生成好看\u002F好用的最终报告。\u003Cbr\u002F\u003E\u003Cb\u003E技能：这里有个经典图：\u003C\u002Fb\u003E\u003Ca，
+href=\"https:\u002F\u002Flink.zhihu.com\u002F?target=http%3A\u002F\u002Fdrewconway.com\u002Fzia\u002F2013\u002F3\u002F26\u002Fthe-data-science-venn-diagram\"0
+class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\"\u003EThe 
+Data Science Venn 
+Diagram\u003C\u002Fa\u003E\u003Cbr\u002F\u003E实际而言，统计分析知识最好要接近于Statistical 
+PHD的等级。\u003Cbr\u002F\u003E列一些常用的一定要知道的：random 
+forest（这个真的是万金油，哪里都有它），glm的各种（其中logistic回归堪称万金油2号），lasso和ridge，mixed 
+modeling，时间序列(比如ARIMA），营销偏向的也很喜欢用conjoint analysis和pca相关的方法，机器学习相关的gradient 
+boosting用的很多（万金油3号），经常被非技术人士提及的神经网络反而很少能发挥作用。\u003Cbr\u002F\u003E技术知识要能写R或Python至少其一，SAS和Matlab用的人正在渐渐变少。不仅仅是写普通的统计分析程序，至少要能为这其中一个写点企业专用的package，最好还能和\u003Cb\u003EData问
+Engineer\u003C\u002Fb\u003E或者software 
+engineer就数据库和R之间的架构和代码转换问题干上一架。\u003Cbr\u002F\u003E同时也要熟悉大数据平台一些其他的必备技能：比如和spark的互通（比如sparklyr包），和hive交流的hql，impala使用的普通sql，等等。\u003Cbr\u002F\u003E最后，必备的商业知识和沟通技能也是必不可少，因为这会影响到最终给商业部门提交准确度报告时，模型评估方式的选择。e.g.：
+A果汁的利润大于B果汁，而A果汁的成本小于B果汁，那么相对于B果汁，A果汁对于模型over forecasting的容忍度要高于under 
+forecasting，传统的MAE或MAPE在这里可能就不适用了。要能够根据具体商业部门的利益调整模型的侧重。否则即使是很好的模型，商业部门也很可能不会买单。--这一点，在IT主导的互联网企业，就会好很多。\u003C\u002Fp\u003E\u003Cp"
+class=\"ztext-empty-paragraph\"\u003E\u003Cbr\u002F\u003E\u003C\u002Fp\u003E\u003Cpe
+data-pid=\"wFN2Bo2h\"\u003EPS：其实像google这种能把大数据分析玩的登峰造极的毕竟是少数。许多传统行业的商业部门看见data 
+scientist做出来的统计分析结果（任何纯文字或者excel里面不存在的图表）就会想睡觉或者昏倒。。。所以实际上，也不用特别高大上的统计分析方法，而且有的时候现有数据根本无法支持那些分析方法。。。。\u003C\u002Fp\u003E","contentMark":{},"createdTime":1434727943,"decorativeLabels":[],"editableContent":"","excerpt":"也许我可以从所需技能的角度来回答一下。\
+读前注意：时隔两年重新编辑了一下，修改了一些自己当初理解不到位的地方，也加了一些自己这两年成长为一个成熟的data scientist的心得。然而对于data 
+engineer 
+这一块，依然只是参考了同事的工作内容，欢迎指正。这个回答是基于传统零售行业，虽然偏向于大数据，但并非互联网相关行业，而不同行业可能出现相当不同的职业职责范围界定，务必注意。＝＝＝干货分割线＝＝＝…","extras":"","id":51984882,"isCollapsed":false,"isCopyable":false,"isLabeled":false,"isMine":false,"isNormal":true,"isSticky":false,"isVisible":true,"markInfos":[],"question":{"created":1401282213,"id":23946233,"questionType":"normal","relationship":{},"title":"DataE
+Scientist、Data Analyst、Data Engineer 
+的区别是什么？","type":"question","updatedTime":1406338574,"url":"https:\u002F\u002Fwww.zhihu.com\u002Fapi\u002Fv4\u002Fquestions\u002F23946233"},"reactionInstruction":{},"relationship":{"isAuthor":false,"isAuthorized":false,"isNothelp":false,"isRecognized":false,"isThanked":false,"upvotedFollowees":[],"voting":0},"relevantInfo":{"isRelevant":false,"relevantText":"","relevantType":""},"reshipmentSettings":"disallowed","rewardInfo":{"canOpenReward":false,"isRewardable":false,"rewardMemberCount":0,"rewardTotalMoney":0,"tagline":""},"stickyInfo":"","suggestEdit":{"reason":"","status":false,"tip":"","title":"","unnormalDetails":{"description":"","note":"","reason":"","reasonId":0,"status":""},"url":""},"thanksCount":39,"thumbnailInfo":{"count":0,"thumbnails":[],"type":"thumbnail_info"},"type":"answer","updatedTime":1593352115,"url":"https:\u002F\u002Fwww.zhihu.com\u002Fapi\u002Fv4\u002Fanswers\u002F51984882","visibleOnlyToAuthor":false,"voteupCount":140,"zhiPlusExtraInfo":""},"91244435":{"adminClosedComment":false,"annotationAction":null,"answerType":"normal","attachedInfo":"ogEOCAQQAxiTj8ErIPnHtQuSAiIKCDMxOTM1NDk2Egg5MTI0NDQzNRgEIgpJTUFHRV9URVhU","author":{"avatarUrl":"https:\u002F\u002Fpicx1.zhimg.com\u002Fv2-9c2f612acbefb404815d0f99a5596fb2_l.jpg?source=1940ef5c","avatarUrlTemplate":"https:\u002F\u002Fpicx1.zhimg.com\u002Fv2-9c2f612acbefb404815d0f99a5596fb2.jpg?source=1940ef5c","badge":[],"badgeV2":{"detailBadges":[],"icon":"","mergedBadges":[],"nightIcon":"","title":""},"exposedMedal":{"avatarUrl":"https:\u002F\u002Fpic1.zhimg.com\u002Fv2-1607ab617c9cbaf0c75cb00d0c42292c_l.png?source=1940ef5c","description":"已完善全部个人资料","medalAvatarFrame":"","medalId":"972465637922213888","medalName":"给自己证明","miniAvatarUrl":"https:\u002F\u002Fpicx1.zhimg.com\u002Fv2-1607ab617c9cbaf0c75cb00d0c42292c_r.png?source=1940ef5c"},"followerCount":1211,"gender":1,"headline":"Machineh
+Learning\u002FQuant爱好者","id":"7c9699c1fd4ab923f7bb0ccfb3ad6965","isAdvertiser":false,"isFollowed":false,"isFollowing":false,"isOrg":false,"isPrivacy":false,"name":"TTL\
+30d","type":"people","url":"https:\u002F\u002Fwww.zhihu.com\u002Fapi\u002Fv4\u002Fpeople\u002F7c9699c1fd4ab923f7bb0ccfb3ad6965","urlToken":"xiang-ren-kai","userType":"people"},"canComment":{"reason":"","status":true},"collapseReason":"","collapsedBy":"nobody","commentCount":6,"commentPermission":"all","content":"\u003Cpr
+data-pid=\"gamXdYsx\"\u003E制造砖头,数砖头,搬砖头\u003C\u002Fp\u003E","contentMark":{},"createdTime":1458264360,"decorativeLabels":[],"editableContent":"","excerpt":"制造砖头,数砖头,搬砖头","extras":"","id":91244435,"isCollapsed":false,"isCopyable":true,"isLabeled":false,"isMine":false,"isNormal":true,"isSticky":false,"isVisible":true,"markInfos":[],"question":{"created":1401282213,"id":23946233,"questionType":"normal","relationship":{},"title":"Datas
+Scientist、Data Analyst、Data Engineer 
+的区别是什么？","type":"question","updatedTime":1406338574,"url":"https:\u002F\u002Fwww.zhihu.com\u002Fapi\u002Fv4\u002Fquestions\u002F23946233"},"reactionInstruction":{},"relationship":{"isAuthor":false,"isAuthorized":false,"isNothelp":false,"isRecognized":false,"isThanked":false,"upvotedFollowees":[],"voting":0},"relevantInfo":{"isRelevant":false,"relevantText":"","relevantType":""},"reshipmentSettings":"allowed","rewardInfo":{"canOpenReward":false,"isRewardable":false,"rewardMemberCount":0,"rewardTotalMoney":0,"tagline":""},"stickyInfo":"","suggestEdit":{"reason":"","status":false,"tip":"","title":"","unnormalDetails":{"description":"","note":"","reason":"","reasonId":0,"status":""},"url":""},"thanksCount":2,"thumbnailInfo":{"count":0,"thumbnails":[],"type":"thumbnail_info"},"type":"answer","updatedTime":1458264360,"url":"https:\u002F\u002Fwww.zhihu.com\u002Fapi\u002Fv4\u002Fanswers\u002F91244435","visibleOnlyToAuthor":false,"voteupCount":38,"zhiPlusExtraInfo":""},"91433956":{"adminClosedComment":false,"annotationAction":null,"answerType":"normal","attachedInfo":"ogEOCAQQAxjk18wrIPnHtQuSAiIKCDMyMDExMzIwEgg5MTQzMzk1NhgEIgpJTUFHRV9URVhU","author":{"avatarUrl":"https:\u002F\u002Fpic1.zhimg.com\u002Fv2-abed1a8c04700ba7d72b45195223e0ff_l.jpg?source=1940ef5c","avatarUrlTemplate":"https:\u002F\u002Fpicx1.zhimg.com\u002Fv2-abed1a8c04700ba7d72b45195223e0ff.jpg?source=1940ef5c","badge":[],"badgeV2":{"detailBadges":[],"icon":"","mergedBadges":[],"nightIcon":"","title":""},"exposedMedal":{"avatarUrl":"https:\u002F\u002Fpica.zhimg.com\u002Fv2-a35006ac1ae6b29f342ccbcfdb15fcf7_l.png?source=1940ef5c","description":"获得"
+100000 
+个赞同","medalAvatarFrame":"","medalId":"972475023013875712","medalName":"有口皆碑","miniAvatarUrl":"https:\u002F\u002Fpica.zhimg.com\u002Fv2-a35006ac1ae6b29f342ccbcfdb15fcf7_r.png?source=1940ef5c"},"followerCount":28754,"gender":0,"headline":"","id":"ee7179bfd27779623080f2308b9fc946","isAdvertiser":false,"isFollowed":false,"isFollowing":false,"isOrg":false,"isPrivacy":true,"name":"知乎用户","type":"people","url":"https:\u002F\u002Fwww.zhihu.com\u002Fapi\u002Fv4\u002Fpeople\u002F0","urlToken":"","userType":"people","vipInfo":{"isVip":true,"vipIcon":{"nightModeUrl":"https:\u002F\u002Fpica.zhimg.com\u002Fv2-c9686ff064ea3579730756ac6c289978.jpg?source=88ceefae","url":"https:\u002F\u002Fpic1.zhimg.com\u002Fv2-4812630bc27d642f7cafcd6cdeca3d7a.jpg?source=88ceefae"}}},"canComment":{"reason":"","status":true},"collapseReason":"","collapsedBy":"nobody","commentCount":0,"commentPermission":"all","content":"\u003Cpl
+data-pid=\"CK9vSGCQ\"\u003E挖坑，数坑和填坑\u003C\u002Fp\u003E","contentMark":{},"createdTime":1458371528,"decorativeLabels":[],"editableContent":"","excerpt":"挖坑，数坑和填坑","extras":"","id":91433956,"isCollapsed":false,"isCopyable":true,"isLabeled":false,"isMine":false,"isNormal":true,"isSticky":false,"isVisible":true,"markInfos":[],"question":{"created":1401282213,"id":23946233,"questionType":"normal","relationship":{},"title":"Dataw
+Scientist、Data Analyst、Data Engineer 
+的区别是什么？","type":"question","updatedTime":1406338574,"url":"https:\u002F\u002Fwww.zhihu.com\u002Fapi\u002Fv4\u002Fquestions\u002F23946233"},"reactionInstruction":{},"relationship":{"isAuthor":false,"isAuthorized":false,"isNothelp":false,"isRecognized":false,"isThanked":false,"upvotedFollowees":[],"voting":0},"relevantInfo":{"isRelevant":false,"relevantText":"","relevantType":""},"reshipmentSettings":"allowed","rewardInfo":{"canOpenReward":false,"isRewardable":false,"rewardMemberCount":0,"rewardTotalMoney":0,"tagline":""},"stickyInfo":"","suggestEdit":{"reason":"","status":false,"tip":"","title":"","unnormalDetails":{"description":"","note":"","reason":"","reasonId":0,"status":""},"url":""},"thanksCount":2,"thumbnailInfo":{"count":0,"thumbnails":[],"type":"thumbnail_info"},"type":"answer","updatedTime":1458371528,"url":"https:\u002F\u002Fwww.zhihu.com\u002Fapi\u002Fv4\u002Fanswers\u002F91433956","visibleOnlyToAuthor":false,"voteupCount":31,"zhiPlusExtraInfo":""},"370725097":{"adminClosedComment":false,"annotationAction":null,"answerType":"normal","attachedInfo":"ogEPCAQQAxjpoeOwASD5x7ULkgIjCgg5NzQ2NTU1MhIJMzcwNzI1MDk3GAQiCklNQUdFX1RFWFQ=","author":{"avatarUrl":"https:\u002F\u002Fpicx1.zhimg.com\u002Fv2-63a9a9012ccba4bf955f6d2274586b1d_l.jpg?source=1940ef5c","avatarUrlTemplate":"https:\u002F\u002Fpic1.zhimg.com\u002Fv2-63a9a9012ccba4bf955f6d2274586b1d.jpg?source=1940ef5c","badge":[],"badgeV2":{"detailBadges":[],"icon":"","mergedBadges":[],"nightIcon":"","title":""},"exposedMedal":{"avatarUrl":"","description":"","medalId":"0","medalName":""},"followerCount":12796,"gender":1,"headline":"LinkedIn产品经理｜Google数据分析师","id":"21561cac50fb712d4edb987cd6e2841e","isAdvertiser":false,"isFollowed":false,"isFollowing":false,"isOrg":false,"isPrivacy":false,"name":"米妮","type":"people","url":"https:\u002F\u002Fwww.zhihu.com\u002Fapi\u002Fv4\u002Fpeople\u002F21561cac50fb712d4edb987cd6e2841e","urlToken":"minnie-laoshi","userType":"people","vipInfo":{"isVip":false}},"canComment":{"reason":"","status":true},"collapseReason":"","collapsedBy":"nobody","commentCount":11,"commentPermission":"all","content":"\u003Cp 
+data-pid=\"976v80xk\"\u003E讲讲在Google内部这三个职位的区别：\u003C\u002Fp\u003E\u003Cp 
+data-pid=\"aSK8tevO\"\u003EGoogle内部有三类技术岗位（job 
+ladder）。问题提到的三个职位分别从属于这三类技术岗位：\u003C\u002Fp\u003E\u003Cul\u003E\u003Cli 
+data-pid=\"8rhYbQ-x\"\u003EData Engineer顾名思义，是软件工程师（software 
+engineer）的一种。这类工程师做的事情其实非常直白，就是把产品本身产生的原始数据记录进数据库，然后把在数据库里把这些原始数据成表格。举个简单的例子，知乎上每一个用户的行为，包括搜索问题、点击回答、点赞，等等，都需要工程师通过写javascript把这些行为数据存进服务器里，然后存成一个表格记录下来每一天，每一秒，每一个用户做了什么动作。\u003C\u002Fli\u003E\u003CliN
+data-pid=\"9rGBEHlq\"\u003EData Scientist在Google被称作quantitative 
+analyst，翻译过来大概类似于量化分析师。这类职位比较特殊，是一种非常technical、对学术能力要求非常高的职位。这类职位99%的同事都是统计或者数学的phD，一般人听不懂他们在说什么～i
+根据我个人的了解，他们的大部分工作是分析 Google 
+Search的增长。搜索是Google最核心、最赚钱的产品，我们希望更多人用我们的搜索，更多的人能够和搜索结果互动。Data 
+Scientist解决的问题就是，如果我们对搜索的排序做一些改动，如何通过统计学的方法精确测量这个改动对搜索整体带来的影响。这个影响往往是非常小的（Google 
+1天平均10亿次搜索，这个量级上的任何改动都是至关重要的）。\u003C\u002Fli\u003E\u003Cli 
+data-pid=\"NFztP700\"\u003EData Analyst在Google被称作商业分析师（business 
+analyst）或者是产品分析师（product analyst）。这个职位的作用是沟通产品和商业的桥梁，服务对象一般是产品经理以及高层领导。Data 
+Analyst首先会把工程师维护的数据进行ETL（extract, transform, load），也就是传说中的跑数据（大多用SQL）。随后Data 
+Analyst会把这些提取出的数据转化为“生产力“，也就是能够指导商业或者产品的建议。工作场景：产品经理上线了一款产品，这款产品运行的怎么样？有多少人访问？有多少人购买？购买人数始终上不去是什么原因？如何发掘购买人数降低的原理然后针对这些原因进行有目的的处理？这些都是通过分析产品产生的数据得到的。本人就是一枚商业分析师～\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003Cp就
+class=\"ztext-empty-paragraph\"\u003E\u003Cbr\u002F\u003E\u003C\u002Fp\u003E\u003Cp通
+data-pid=\"5SAFEw9h\"\u003E在硅谷的其他科技公司，这三类职位的叫法会有一些区别。比如在Facebook的Data 
+Scientist分成两种方向（track），一种是Research track，就是我们上面讲的Data Scientist。另一种是Product 
+Analytics track，就是我们上面讲的Business\u002FProduct Analyst。\u003C\u002Fp\u003E\u003Cp 
+class=\"ztext-empty-paragraph\"\u003E\u003Cbr\u002F\u003E\u003C\u002Fp\u003E\u003Cp望
+data-pid=\"DuCPYjAq\"\u003E其他公司比如Uber，AirBnB，也都大同小异，多是换汤不换药啦。\u003C\u002Fp\u003E\u003Cp的
+class=\"ztext-empty-paragraph\"\u003E\u003Cbr\u002F\u003E\u003C\u002Fp\u003E\u003Cpt
+data-pid=\"kIPLgs90\"\u003E同意一位同学的说法，很多公司其实找人是做Data Analyst或Business 
+Intelligence Analyst的活，但是为了听起来更有情趣，把名称统统叫成Data 
+Scientist。。。\u003C\u002Fp\u003E","contentMark":{},"createdTime":1524117490,"decorativeLabels":[],"editableContent":"","excerpt":"讲讲在Google内部这三个职位的区别：工
+Google内部有三类技术岗位（job ladder）。问题提到的三个职位分别从属于这三类技术岗位： Data 
+Engineer顾名思义，是软件工程师（software 
+engineer）的一种。这类工程师做的事情其实非常直白，就是把产品本身产生的原始数据记录进数据库，然后把在数据库里把这些原始数据成表格。举个简单的例子，知乎上每一个用户的行为，包括搜索问题、点击回答、点赞，等等，都需要工程师通过写javascri…","extras":"","id":370725097,"isCollapsed":false,"isCopyable":true,"isLabeled":false,"isMine":false,"isNormal":true,"isSticky":false,"isVisible":true,"markInfos":[],"question":{"created":1401282213,"id":23946233,"questionType":"normal","relationship":{},"title":"Datal
+Scientist、Data Analyst、Data Engineer 
+作者：米妮
+链接：https://www.zhihu.com/question/23946233/answer/370725097
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
+
+S2.ep19 數位時代不可或缺的企業軍師-數據分析師 | 大數據分析 | 凱絡媒體 | 數據解密系列
+https://www.youtube.com/watch?v=s2bABQ5p3mk
+
+
+零经验2个月转行数据分析师系列（1）如何自学数据分析，技能速成
+https://www.youtube.com/watch?v=NZ6BMUVn5d4
+
+非科班转行数据分析/科学，路在何方？手把手教你准备数据转行 | Amazon Google | 数据分析技能 | 面试简历准备 | 心态调整 | 数据方向行业发展 | 数据分析工作内容
+https://www.youtube.com/watch?v=07WjiX2CrD0
+
+
+S2.ep14 解救肝苦行銷人的工具神器來啦！一次搞定數據整合與視覺化圖表 | 大數據分析 | 凱絡媒體 | 數據解密系列
+https://www.youtube.com/watch?v=jkwnnERA2vc
+
+Why data/business analytics? 文商科背景如何转行数据分析师？留学生毕业小白如何拿下data analyst job offer?
+https://www.youtube.com/watch?v=t7dtFv5cPM8
+
+S2.ep11 🚨 數位廣告警報響起！行銷人不可不知：沒有Cookie你該怎麼辦？ | 數位媒體購買知識 | 凱絡媒體 | 數據解密系列
+https://www.youtube.com/watch?v=K0b9uXpA4V8
+
+歐洲處罰google，所以chrome以後不支援第三方cookie（fb/google會寫代碼，將資料傳回fb/google)
+GA屬於第一方cookie，所以還能繼續使用
+
+GA--->連結google ads---》指定投放廣告給所有三星手機的客戶
+GA--->連結客戶CRM系統/GMP資料交換系統
+
+Line/fb/IG/youtube/---》ads
+雖然也是第三方，但是不是屬於cookie，所以，不會受限
+例如
+fb/ig---》數據直接給fb ads---》做更深層的再行銷
+
+同理
+line---》line ads
+youtube ---> youtube ads
+
+S1.ep9 再行銷的基本概念 | 凱絡媒體 | 數據解密系列
+https://www.youtube.com/watch?v=LdgwAAtsfOs
+
+四種再行銷技術
+1.代碼收集user的資料
+2.串聯社群平台，取得user行為
+3.透過App/SDK，取得
+4.CRMP的整合，比對後，取得符合資料的user
+
+S1.ep15 DMP與CDP在管理什麼? | 凱絡媒體 | 數據解密系列
+https://www.youtube.com/watch?v=XcaQiYhiKIA
+
+
+S1.ep10 蒐集大數據 你要先搞懂代碼！| 凱絡媒體 | 數據解密系列
+https://www.youtube.com/watch?v=BEJH28URGEY
+
+S2.ep14 解救肝苦行銷人的工具神器來啦！一次搞定數據整合與視覺化圖表 | 大數據分析 | 凱絡媒體 | 數據解密系列
+https://www.youtube.com/watch?v=jkwnnERA2vc
+
+（1）excel與BI的差別，
+BI外接數據源，可以固定時間，自動化更新結果圖，但是Excel不行
+BI可以自訂指標
+
+（2）四大BI：finereport, tableau, power BI, google data studio
+
+（2）tableau
+優點：
+BI工具的鼻祖，典範
+有豐富的視覺化圖表資料庫
+缺點：
+要付費
+沒有對接媒體的連接器，整合媒體的效率差
+
+（3）poer BI
+優點：
+類似excel的設計
+整合微軟Office產品
+有提供google,FB的數據源連接器
+缺點：
+必須買office365
+沒有提供小眾媒體連接器，必須先轉成excel，再匯入
+
+
+（4）google Data Studio
+優點：
+可以外接多個媒體來源
+可以對接所有的Google各種產品，完全免費（GA， google ads, GTM)
+有龐大的第三方連接器資源（fb/yahoo。。。）
+缺點：
+報表模組陽春
+視覺化圖表13種，類型不足
+
+
+行銷人員不可不知的程式知識（三）--- 全面解析追蹤代碼（Tracking Code）
+https://tw.alphacamp.co/blog/2017-02-07-coding-basics-for-marketers-3
+
+
+
+做網路行銷為什麼要學程式？6個數位行銷技能大躍進！
+https://tw.alphacamp.co/blog/learning-code-is-important-for-digital-marketers
+如果你想要在相對短的時間內成為一個有基礎程式能力的行銷人員， ALPHA Camp 的學期一：程式設計入門，以及學期二：JavaScript前端完整技能是很好的選擇。
+
+
+全域網站代碼 + 事件程式碼片段 = 再行銷廣告
+https://schoolaa.net/2021/06/11/%E5%85%A8%E5%9F%9F%E7%B6%B2%E7%AB%99%E4%BB%A3%E7%A2%BC-%E4%BA%8B%E4%BB%B6%E7%A8%8B%E5%BC%8F%E7%A2%BC%E7%89%87%E6%AE%B5-%E5%86%8D%E8%A1%8C%E9%8A%B7%E5%BB%A3%E5%91%8A/
+
+
+Grow with Google 
+成長計畫
+https://growonairtw.withgoogle.com/
+
+
+行銷知識 » 網站優化 » GTM教學-新手觀念篇，追蹤網站數據你只需Google Tag Manager代碼
+GTM教學-新手觀念篇，追蹤網站數據你只需Google Tag Manager代碼
+https://inboundmarketing.com.tw/gtm%E6%95%99%E5%AD%B8-%E6%96%B0%E6%89%8B%E8%A7%80%E5%BF%B5%E7%AF%87/
+
+
+
+完整的Google Ads教學，教你如何在2022操作關鍵字廣告！
+https://inboundmarketing.com.tw/google-adwords%e9%97%9c%e9%8d%b5%e5%ad%97%e5%bb%a3%e5%91%8a%e6%95%99%e5%ad%b8/
+
+
+【GA完整教學最新版】Google Analytics從註冊設定到操作介面，一次學會網站流量分析！
+https://inboundmarketing.com.tw/google-analytics/
+
+
+Facebook Pixel完整教學，一篇了解FB像素的所有功能！
+https://inboundmarketing.com.tw/facebook-pixel%e3%80%81fb%e5%83%8f%e7%b4%a0%e5%ae%8c%e6%95%b4%e6%95%99%e5%ad%b8/
+
+
+未來網路流量最大趨勢商機：私域流量
+
+如何建立你的...
+私域流量~是企業最重要的變現資產
+讓你的生意每天都有50-60精準客戶詢問
+
+私域流量的四大建立方式
+成為閃電百萬富翁的真正秘密
+聯盟行銷獲取精準流量的正確方式(不寫文章、不拍影片，不做SEO)
+如何自動化：集客、育客、鎖客、拓客
+最新流量紅利
+https://shortcut.tw/?e-landing-page=elementor-landing-page-1289&gclid=Cj0KCQiAvqGcBhCJARIsAFQ5ke5TepYqCYYOx0xAkJaTHKDTh0-bDVx6i8QFzh95pxjmTiuEuaev2_EaAo6XEALw_wcB
+教學影片
+https://shortcut.tw/?e-landing-page=%E9%96%83%E9%9B%BB%E7%99%BE%E8%90%AC%E5%AF%8C%E7%BF%81opp%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB%E8%A7%80%E7%9C%8B
+
+
+
+
+為什麼要知道曝光數與觸及數呢？
+https://www.kolmasters.com/blog/impression-reach/
+
